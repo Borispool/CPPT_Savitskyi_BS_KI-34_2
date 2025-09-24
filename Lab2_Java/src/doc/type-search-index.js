@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"KI34.Savitskyi.lab2","l":"CartridgeSystem"},{"p":"KI34.Savitskyi.lab2","l":"Logger"},{"p":"KI34.Savitskyi.lab2","l":"PaperTray"},{"p":"KI34.Savitskyi.lab2","l":"Printer"},{"p":"KI34.Savitskyi.lab2","l":"PrinterDriver"},{"p":"KI34.Savitskyi.lab2","l":"PrintingMechanism"}];updateSearchResults();
