@@ -4,8 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-
+        {
+            "type": "java",
+            "name": "MultifunctionalDeviceDriver",
+            "request": "launch",
+            "mainClass": "KI34.Savitskyi.lab3.MultifunctionalDeviceDriver",
+            "projectName": "CPPT_Savitskyi_BS_KI-34_2_9f9eb515"
+        },
         {
             "type": "java",
             "name": "Current File",
@@ -19,7 +24,7 @@
             "request": "launch",
             "mainClass": "Lab1SavitskyiKI304",
             "projectName": "CPPT_Savitskyi_BS_KI-34_2_9f9eb515",
-            "vmArgs": "-Dfile.encoding=UTF-8" 
+            "vmArgs": "-Dfile.encoding=UTF-8"
         }
     ]
 }
