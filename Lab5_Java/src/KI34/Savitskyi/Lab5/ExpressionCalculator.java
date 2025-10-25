@@ -1,4 +1,4 @@
-package KI34.Savitskyi.Lab4;
+package KI34.Savitskyi.Lab5;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,7 +10,7 @@ public class ExpressionCalculator {
      *
      * @param x значення змінної x в радіанах
      * @return результат обчислення виразу
-     * @throws CalcException якщо виникає помилка ділення на нуль (ctg або знаменник)
+     * @throws CalcException якщо виникає помилка ділення на нуль (ctg або зна-менник)
      */
     public double calculate(double x) throws CalcException {
         
@@ -18,7 +18,7 @@ public class ExpressionCalculator {
 
         double sinX = Math.sin(rad);
         if (Math.abs(sinX) < 1e-9) {
-            throw new CalcException("Помилка: sin(x) = 0, котангенс не визначений.");
+            throw new CalcException("Помилка: sin(x) = 0, котангенс не визначе-ний.");
         }
 
         double denominator = Math.sin(2 * rad) + 4 * Math.cos(rad);

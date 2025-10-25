@@ -1,4 +1,4 @@
-package KI34.Savitskyi.Lab4;
+package KI34.Savitskyi.Lab5;
 
 public class CalcException extends ArithmeticException {
 
