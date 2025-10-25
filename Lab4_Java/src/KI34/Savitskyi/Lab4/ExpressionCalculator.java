@@ -3,35 +3,45 @@ package KI34.Savitskyi.Lab4;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- * Клас для обчислення виразу y = ctg(x)/(sin(2x)+4cos(x)).
- * Використовується для демонстрації механізму виключень і запису результатів у файл.
- */
 public class ExpressionCalculator {
 
     /**
      * Обчислює вираз y = ctg(x)/(sin(2x)+4cos(x)).
      *
-     * @param x значення змінної x
+     * @param x значення змінної x в радіанах
      * @return результат обчислення виразу
-     * @throws IllegalArgumentException якщо x = 0, оскільки вираз не визначений
+     * @throws CalcException якщо виникає помилка ділення на нуль (ctg або знаменник)
      */
-    public double calculate(double x) throws IllegalArgumentException {
-        if (x == 0) {
-            throw new IllegalArgumentException("Значення x не може бути 0, оскільки вираз не визначений.");
+    public double calculate(double x) throws CalcException {
+        
+        double rad = x * Math.PI / 180.0;
+
+        double sinX = Math.sin(rad);
+        if (Math.abs(sinX) < 1e-9) {
+            throw new CalcException("Помилка: sin(x) = 0, котангенс не визначений.");
         }
-        var cotangent = Math.cos(x) / Math.sin(x);
 
-        return cotangent / (Math.sin(2 * x) + 4 * Math.cos(x));
+        double denominator = Math.sin(2 * rad) + 4 * Math.cos(rad);
+        if (Math.abs(denominator) < 1e-9) {
+            throw new CalcException("Помилка: знаменник (sin(2x) + 4cos(x)) = 0.");
+        }
 
+        double cotangent = Math.cos(rad) / sinX;
+        double result = cotangent / denominator;
+
+        
+        if (Double.isNaN(result)) {
+             throw new CalcException("Помилка: результат не є числом (NaN).");
+        }
+
+        return result;
     }
 
     /**
      * Записує результат обчислення у файл.
-     *
+     * @param filePath шлях до файлу для запису
      * @param result результат обчислення
-     * @param filePath шлях до файлу
-     * @throws IOException якщо виникає помилка при записі у файл
+     * @throws IOException якщо виникає помилка запису у файл
      */
     public void writeResultToFile(double result, String filePath) throws IOException {
         try (FileWriter writer = new FileWriter(filePath)) {
