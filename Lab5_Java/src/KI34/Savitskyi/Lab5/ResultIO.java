@@ -10,6 +10,22 @@ import java.io.*;
  */
 public class ResultIO {
 
+    public void write(String filePath, double data, long position) throws IOException {
+    try (RandomAccessFile raf = new RandomAccessFile(filePath, "rw")) {
+        raf.seek(position);
+        raf.writeDouble(data);
+    }
+}
+
+    public double read(String filePath, long position) throws IOException {
+
+    try (RandomAccessFile raf = new RandomAccessFile(filePath, "r")) {
+        raf.seek(position);
+        double result = raf.readDouble();
+        return result;
+    }
+}
+
     /**
      * Записує результат (double) у текстовий файл.
      *

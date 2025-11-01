@@ -44,7 +44,19 @@ public class Lab5App {
             double resultFromBinary = ioManager.readResultBin(BINARY_FILE);
             System.out.println("Результат, прочитаний з " + BINARY_FILE + ": " + resultFromBinary);
             System.out.println("-------------------------------------");
+            
+            ioManager.write(TEXT_FILE, resultFromBinary, 0);
+            System.out.println("Результат записано у " + TEXT_FILE);
+            
+            double resultfromRandomaccses = ioManager.read(TEXT_FILE, 0);
+            System.out.println("Результат, прочитаний з допомогою RandomAccessFile"+ ": "+ resultfromRandomaccses);
 
+            ioManager.write(BINARY_FILE, resultFromBinary, 0);
+            System.out.println("Результат записано у " + BINARY_FILE);
+            
+            double resultfromRandomaccsesBinary = ioManager.read(BINARY_FILE, 0);
+            System.out.println("Результат, прочитаний з допомогою RandomAccessFile"+ ": "+ resultfromRandomaccsesBinary);
+           
             // 4. Перевіряємо коректність
             if (originalResult == resultFromText && originalResult == resultFromBinary) {
                 System.out.println("ТЕСТ ПРОЙДЕНО: Всі результати збігаються.");
