@@ -34,3 +34,4 @@ public class SafeDriver {
         System.out.println("Розмір сейфу: " + documentSafe.getSize());
     }
 }
+

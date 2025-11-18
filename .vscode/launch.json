@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "hello",
+            "request": "launch",
+            "mainClass": "KI34.Savitskyi.Lab6.hello",
+            "projectName": "CPPT_Savitskyi_BS_KI-34_2_f95817b2"
+        },
+        {
+            "type": "java",
+            "name": "SafeDriver",
+            "request": "launch",
+            "mainClass": "KI34.Savitskyi.Lab6.SafeDriver",
+            "projectName": "CPPT_Savitskyi_BS_KI-34_2_f95817b2"
+        },
+        {
+            "type": "java",
             "name": "MultifunctionalDeviceDriver",
             "request": "launch",
             "mainClass": "KI34.Savitskyi.lab3.MultifunctionalDeviceDriver",
