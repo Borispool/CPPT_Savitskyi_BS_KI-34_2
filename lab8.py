@@ -2,7 +2,7 @@ import math
 import struct
 import os
 
-# Функція обчислення виразу за варіантом 19
+# --- Функції для обчислення та роботи з файлами ---
 def calculate(x):
     
     tan_val = math.tan(x)
