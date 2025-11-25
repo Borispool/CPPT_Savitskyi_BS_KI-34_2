@@ -1,5 +1,5 @@
 
-from Printer import Printer
+from Lab9_Python.Printer import Printer
 
 class MFP(Printer):
     """
